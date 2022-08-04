@@ -9,4 +9,4 @@
 ##### 3. Then we are going to put the text for each part of the model view
 !["Fourth  View"](imgs/3.jpg)
 ###### Integrants:
-###### Erick Andrade 
+###### Erick Andrade | Jhosef Rea Chamorro | Christian Soledispa
