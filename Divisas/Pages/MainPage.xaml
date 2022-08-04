@@ -3,74 +3,58 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Divisas.MainPage"
              Title="Divisas"
-             BindingContext="{Binding Main, Source={StaticResource Locator}}"
-             >
-
+             BindingContext="{Binding Main, Source={StaticResource Locator}}">
     <ScrollView>
-        <StackLayout
-                Padding="8"
-                
-            >
+        <StackLayout Padding="8">
 
-            <Image Source="https://images-na.ssl-images-amazon.com/images/I/61TuGfMmNOL.png" HeightRequest="200" />
-            <Label
-                Text="Dólares:">
-            </Label>
-            <Entry
-                Text="{Binding Dollar, Mode=TwoWay}"           
-                Keyboard="Numeric"
-                Placeholder="Coloque el valor en dólares...">
-            </Entry>
-            <Button
-                Command="{Binding ConverCommand}"
-                Text="Convertir">
-            </Button>
-            <Label
-                Text="Pesos MX:">
-            </Label>
-            <Entry
-                HorizontalTextAlignment="End"
-                Text="{Binding Pesos, Mode=TwoWay,StringFormat='${0:N2}'}"
-                IsEnabled="false"
-                Placeholder="Valor en pesos...">
-            </Entry>
-            <Label
-                Text="Libras:">
-            </Label>
-            <Entry
-                HorizontalTextAlignment="End"
-                Text="{Binding Pounds, Mode=TwoWay,StringFormat='£{0:N2}'}"
-                IsEnabled="false"
-                Placeholder="Valor en libras...">
-            </Entry>
-            <Label
-                Text="Euros:">
-            </Label>
-            <Entry
-                HorizontalTextAlignment="End"
-                Text="{Binding Euros, Mode=TwoWay, StringFormat='€{0:N2}'}"
-                IsEnabled="false"
-                Placeholder="Valor en euros...">
-            </Entry>
-            <Label
-                Text="Yen Chino: ">
-            </Label>
-            <Entry
-                HorizontalTextAlignment="End"
-                Text="{Binding Yen, Mode=TwoWay,StringFormat='¥{0:N2}'}"
-                IsEnabled="false"
-                Placeholder="Valor en yenes...">
-            </Entry>
-            <Label
-                Text="Rublos: ">
-            </Label>
-            <Entry
-                HorizontalTextAlignment="End"
-                Text="{Binding Rublos, Mode=TwoWay, StringFormat='₽{0:N2}'}"
-                IsEnabled="false"
-                Placeholder="Valor en rublos..">
-            </Entry>
+            <Frame BackgroundColor="Black"
+                   CornerRadius="25"
+                   VerticalOptions="StartAndExpand"
+                   Margin="40">
+                <StackLayout>
+                    <Image Source="https://thumbs.dreamstime.com/b/dollar-currency-sign-sparks-dark-background-57202926.jpg"
+                           HeightRequest="250" />
+                </StackLayout>
+            </Frame>
+            <Label Text="Dólares:"></Label>
+            <Entry Text="{Binding Dollar, Mode=TwoWay}"
+                   Keyboard="Numeric"
+                   Placeholder="Coloque el valor en dólares..."></Entry>
+            <Button Command="{Binding ConverCommand}"
+                    BackgroundColor="#AC7088"
+                    Text="Convertir"></Button>
+           
+            <!--Add new values-->
+            <Label Text="Real Brazilero: "
+                   TextColor="#1C3879" />
+            <Entry HorizontalTextAlignment="End"
+                   Text="{Binding Real, Mode=TwoWay, StringFormat='R${0:N2}'}"
+                   IsEnabled="false"
+                   Placeholder="Valor en Real Brazilero.."></Entry>
+            <Label Text="Rupia India: "
+                   TextColor="#1C3879" />
+            <Entry HorizontalTextAlignment="End"
+                   Text="{Binding Rupia, Mode=TwoWay, StringFormat='₹{0:N2}'}"
+                   IsEnabled="false"
+                   Placeholder="Valor en Rupia India.."></Entry>
+            <Label Text="Rubio Ruso: "
+                   TextColor="#1C3879" />
+            <Entry HorizontalTextAlignment="End"
+                   Text="{Binding Rubio, Mode=TwoWay, StringFormat='₽{0:N2}'}"
+                   IsEnabled="false"
+                   Placeholder="Valor en Rubio Ruso.."></Entry>
+            <Label Text="Francos: "
+                   TextColor="#1C3879" />
+            <Entry HorizontalTextAlignment="End"
+                   Text="{Binding Franco, Mode=TwoWay, StringFormat='Fr{0:N2}'}"
+                   IsEnabled="false"
+                   Placeholder="Valor en Francos.."></Entry>
+            <Label Text="Corona Sueca: "
+                   TextColor="#1C3879" />
+            <Entry HorizontalTextAlignment="End"
+                   Text="{Binding Corona, Mode=TwoWay, StringFormat='kr{0:N2}'}"
+                   IsEnabled="false"
+                   Placeholder="Valor en Corona Sueca.."></Entry>
         </StackLayout>
     </ScrollView>
-
 </ContentPage>

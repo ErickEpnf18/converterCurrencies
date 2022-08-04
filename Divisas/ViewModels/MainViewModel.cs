@@ -9,17 +9,26 @@ namespace Divisas.ViewModels
 {
     public class MainViewModel : INotifyPropertyChanged
     {
-        private decimal pesos;
 
         private decimal dollars;
 
-        private decimal yen;
 
-        private decimal pounds;
+        // new vars
+        private decimal real;
 
-        private decimal euros;
+        private decimal rupia;
+        
+        private decimal rubio;
+        
+        private decimal franco;
+        
+        private decimal corona;
 
-        private decimal rublo;
+
+
+        
+
+
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -41,82 +50,93 @@ namespace Divisas.ViewModels
 
         }
 
-        public decimal Yen
+
+        // new vars
+        public decimal Real
         {
             set
             {
-                if (yen != value)
+                if (real != value)
                 {
-                    yen = value;
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Yen"));
+                    real = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Real"));
                 }
             }
             get
             {
-                return yen;
+                return real;
             }
 
         }
 
-        public decimal Pesos
+        public decimal Rupia
         {
             set
             {
-                if (pesos != value)
+                if (rupia != value)
                 {
-                    pesos = value;
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Pesos"));
+                    rupia = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Rupia"));
                 }
             }
             get
             {
-                return pesos;
+                return rupia;
             }
-        }
-        public decimal Pounds
-        {
-            set
-            {
-                if (pounds != value)
-                {
-                    pounds = value;
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Pounds"));
-                }
-            }
-            get
-            {
-                return pounds;
-            }
-        }
-        public decimal Euros {
-            set
-            {
-                if (euros != value)
-                {
-                    euros = value;
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Euros"));
-                }
-            }
-            get
-            {
-                return euros;
-            }
+
         }
 
-        public decimal Rublos
+
+        public decimal Rubio
         {
             set
             {
-                if (rublo != value)
+                if (rubio!= value)
                 {
-                    rublo = value;
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Rublos"));
+                    rubio = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Rubio"));
                 }
             }
             get
             {
-                return rublo;
+                return rubio;
             }
+
+        }
+
+        public decimal Franco
+        {
+            set
+            {
+                if (franco != value)
+                {
+                    franco = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Franco"));
+                }
+            }
+            get
+            {
+                return franco;
+            }
+
+        }
+
+
+        public decimal Corona
+        {
+            set
+            {
+                if (corona != value)
+                {
+                    corona = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Corona"));
+                }
+            }
+            get
+            {
+                return corona;
+            }
+
         }
 
 
@@ -130,11 +150,16 @@ namespace Divisas.ViewModels
                 return;
             }
 
-            Pesos = Dollar / (decimal)0.049;
-            Pounds = Dollar / (decimal)1.22;
-            Euros = Dollar / (decimal)1.02;
-            Yen = Dollar / (decimal)0.0075;
-            Rublos = Dollar / (decimal)0.017;
+
+            Real = Dollar / (decimal)0.19;
+            Rupia = Dollar / (decimal)0.013;
+            Rubio = Dollar / (decimal)0.016;
+            Franco = Dollar / (decimal)1.05;
+            Corona  = Dollar / (decimal)0.099;
+
+
+
+
 
 
         }
