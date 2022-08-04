@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Divisas.MainPage"
+             Title="Divisas"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             >
+
+    <ScrollView>
+        <StackLayout
+                Padding="8"
+                
+            >
+
+            <Image Source="https://images-na.ssl-images-amazon.com/images/I/61TuGfMmNOL.png" HeightRequest="200" />
+            <Label
+                Text="Dólares:">
+            </Label>
+            <Entry
+                Text="{Binding Dollar, Mode=TwoWay}"           
+                Keyboard="Numeric"
+                Placeholder="Coloque el valor en dólares...">
+            </Entry>
+            <Button
+                Command="{Binding ConverCommand}"
+                Text="Convertir">
+            </Button>
+            <Label
+                Text="Pesos MX:">
+            </Label>
+            <Entry
+                HorizontalTextAlignment="End"
+                Text="{Binding Pesos, Mode=TwoWay,StringFormat='${0:N2}'}"
+                IsEnabled="false"
+                Placeholder="Valor en pesos...">
+            </Entry>
+            <Label
+                Text="Libras:">
+            </Label>
+            <Entry
+                HorizontalTextAlignment="End"
+                Text="{Binding Pounds, Mode=TwoWay,StringFormat='£{0:N2}'}"
+                IsEnabled="false"
+                Placeholder="Valor en libras...">
+            </Entry>
+            <Label
+                Text="Euros:">
+            </Label>
+            <Entry
+                HorizontalTextAlignment="End"
+                Text="{Binding Euros, Mode=TwoWay, StringFormat='€{0:N2}'}"
+                IsEnabled="false"
+                Placeholder="Valor en euros...">
+            </Entry>
+            <Label
+                Text="Yen Chino: ">
+            </Label>
+            <Entry
+                HorizontalTextAlignment="End"
+                Text="{Binding Yen, Mode=TwoWay,StringFormat='¥{0:N2}'}"
+                IsEnabled="false"
+                Placeholder="Valor en yenes...">
+            </Entry>
+            <Label
+                Text="Rublos: ">
+            </Label>
+            <Entry
+                HorizontalTextAlignment="End"
+                Text="{Binding Rublos, Mode=TwoWay, StringFormat='₽{0:N2}'}"
+                IsEnabled="false"
+                Placeholder="Valor en rublos..">
+            </Entry>
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>
